@@ -39,4 +39,14 @@ export class CheckFlightComponent implements OnInit {
     this.flight.add(add)
   }
   
+  bootrip(value:NgForm,id,date){
+    const booking={
+      fid:id,
+      count:value.value.count,
+      date:date
+    } 
+    this.flight.booking(booking)
+    // console.log(count)
+  }
+
 }

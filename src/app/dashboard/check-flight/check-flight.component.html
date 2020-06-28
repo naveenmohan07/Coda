@@ -69,7 +69,10 @@
         <p>{{ x.flightfrom }}<mat-icon>arrow</mat-icon>{{ x.flightto }}</p>
         <p>{{ x.date }}</p>
         <p>Choose seat</p>
-        <button (click)="">book</button>
+        <form (submit)="bootrip(f,x._id,x.date)" #f="ngForm">
+        <input type="number" ngModel name="count" #count="ngModel" />
+        <button>Submit</button>
+    </form>
     </mat-expansion-panel>
 </mat-accordion>
 </div>

@@ -4,18 +4,10 @@ const userschema = new mongoose.Schema({
     flightid:{
         type:String
     },
-    flightname:{
-        type:String,
-        minlength:3,
-        maxlength:10
-    },
-    userid:{
-        type:String
-    },
     passengers:{
         type:Number
     },
-    status:{
+    date:{
         type:String
     }
 })

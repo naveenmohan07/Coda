@@ -6,6 +6,8 @@ const authController = require('../controller/authController')
 
 const getdetailController = require('../controller/getdetailController')
 
+const bookinController = require('../controller/bookingController')
+
 const app = express()
 
 
@@ -23,5 +25,6 @@ app.post("/signup",authController.signup)
 app.post("/signin",authController.signin)
 app.post("/save",getdetailController.addflight)
 app.post("/view",getdetailController.getflight)
+app.post("/booking",bookinController.booking)
 // app.get("/data" ,getdetailController.getdetails)
 module.exports = app

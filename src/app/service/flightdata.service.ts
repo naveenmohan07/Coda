@@ -26,4 +26,11 @@ export class FlightdataService {
     return this.http.post<{message:string,flights:Flight[]}>("http://localhost:3000/view",check)
   }
 
+  booking(value){
+    console.log(value)
+    this.http.post("http://localhost:3000/booking",value).subscribe(data=>{
+      console.log("fetched")
+    })
+  }
+
 }
