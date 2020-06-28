@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <mat-icon><a routerLink="">home</a> </mat-icon>Flight
+    <span class="spacer"></span>
+    <span><a routerLink="/signup" *ngIf="!authenticated">Signup</a></span>
+    <span><a (click)="signin()" routerLink="/signin" *ngIf="!authenticated">Signin</a></span>
+    <span><mat-menu #appMenu="matMenu" color="primary">
+        <button mat-menu-item routerLink="">Dashboard</button>
+        <button mat-menu-item>Contact</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
+      
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button></span>
+</mat-toolbar>
+<div class="container">
+    <div class="col-md-12 col-xl-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

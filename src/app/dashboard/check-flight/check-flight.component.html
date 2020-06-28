@@ -1,0 +1,75 @@
+<mat-card>
+    <mat-card-header>
+        <h2>Search your Flights</h2>
+    </mat-card-header><hr>
+    <form (submit)="check(f)" #f="ngForm">
+        <div class="row">
+            <div class="col-xs-5">
+                <mat-form-field appearance="outline">
+                    <mat-label>From</mat-label>
+                    <input type="text" matInput placeholder="From" ngModel name="from" #from="ngModel" />
+                    <mat-icon matPrefix>home</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-xs-3">
+                <mat-icon>compare_arrow</mat-icon>
+            </div>
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>To</mat-label>
+                    <input type="text" matInput placeholder="To" ngModel name="to" #to="ngModel" />
+                    <mat-icon matPrefix>work</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-2">
+                <mat-form-field appearance="outline">
+                    <mat-label>Date</mat-label>
+                    <input type="date" matInput placeholder="Date" ngModel name="date" #date="ngModel" />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Type of Trip</mat-label>
+                <mat-select ngModel name="trip" #trip="ngModel">
+                    <mat-option value></mat-option>
+                    <mat-option value="SingleTrip">SingleTrip</mat-option>
+                    <mat-option value="DoubleTrip">DoubleTrip</mat-option>
+                </mat-select   >
+            </mat-form-field>
+            </div>
+            <div class="col-sm-5">
+                <mat-form-field appearance="outline">
+                    <input type="number" matInput placeholder="No of passengers" ngModel name="passengers" #passengers="ngModel" />
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button>Submit</button>
+    </form>
+
+
+    <form (submit)="adddetail(g)" #g="ngForm" > 
+        <input type="text" ngModel name="flightname" #flightname="ngModel" />
+        <input type="text" ngModel name="flightto" #flightto="ngModel" />
+        <input type="text" ngModel name="flightfrom" #flightfrom="ngModel" />
+        <input type="date" ngModel name="date" #date="ngModel" />
+        <button>Submit</button>
+    </form>
+</mat-card>
+<div *ngIf="resultflights">
+
+<p>Total Flights:<strong>{{ resultflights.length }}</strong></p>
+<p *ngIf="resultflights.length==0">To Search Flight,<a routerLink="/dashboard">Click here</a></p>
+<mat-accordion multi="true" >
+    <mat-expansion-panel *ngFor="let x of resultflights">
+        <mat-expansion-panel-header>
+            <h2>{{ x.flightname }}</h2>
+        </mat-expansion-panel-header>
+        <p>{{ x.flightfrom }}<mat-icon>arrow</mat-icon>{{ x.flightto }}</p>
+        <p>{{ x.date }}</p>
+        <p>Choose seat</p>
+        <button (click)="">book</button>
+    </mat-expansion-panel>
+</mat-accordion>
+</div>

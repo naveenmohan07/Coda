@@ -1,0 +1,15 @@
+mat-card{
+    margin-top: 10%;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+a:hover{
+    color: red;
+    font-size: 35px;
+}
+p{
+    opacity: .6;
+}

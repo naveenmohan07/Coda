@@ -1,0 +1,18 @@
+.col-sm-3{
+    margin-top: 8%;
+}
+mat-card{
+    margin-top: 50px;
+}
+.col-xs-2{
+    margin-top: 20px;
+}
+.col-xs-3{
+    margin-top: 20px;
+}
+.row{
+    padding-left: 40px;
+}
+button{
+    margin-left: 80%;
+}

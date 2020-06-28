@@ -1,0 +1,15 @@
+<mat-card>
+    <div class="row">
+        <div class="col-sm-2">
+            <a (click)="press()" class="active" routerLink="/signup">Signup</a>
+        </div> <span>|</span>
+         <div class="col-sm-1">
+            <a (click)="press()" routerLink="/signin">Signin</a>
+        </div>
+    </div>
+    <hr>
+    <div class="component">
+        <p>Please Login/Signup</p>
+        <router-outlet></router-outlet>
+    </div>
+</mat-card>
